@@ -1,0 +1,283 @@
+/* Custom styles */
+@font-face {
+    font-family: '29LT Bukra';
+    src: url('/fonts/29ltbukraregular.otf') format('opentype'),
+        url('/fonts/29ltbukraregular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: '29LT Bukra Bold';
+    src: url('/fonts/29ltbukrabold.otf') format('opentype'),
+        url('/fonts/29ltbukrabold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: '29LT Bukra light';
+    src: url('/fonts/29ltbukralight.otf') format('opentype'),
+        url('/fonts/29ltbukralight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #f7f5f0;
+    /* Body background color */
+    color: #171d1a;
+    /* Body text color */
+    padding-top: 50px;
+    /* Adjust if needed based on the height of the fixed navbar */
+    font-family: '29LT Bukra', sans-serif;
+}
+
+html:lang(ar) body {
+    direction: rtl;
+}
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    /* Full viewport height */
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    /* Ensure the video stays behind the content */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black overlay */
+    z-index: -1;
+    /* Ensure the overlay is behind the text */
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    /* Ensure text is readable */
+    text-align: center;
+    z-index: 1;
+    /* Ensure the content stays above the video */
+    padding: 0 20px;
+    /* Add some padding to ensure text doesn't touch edges */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.hero-content h1,
+.hero-content p {
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
+}
+
+/* Navbar custom styles */
+.navbar-custom {
+    background-color: #b2845d;
+    border-color: #b2845d;
+    border-radius: 0;
+    /* Remove border-radius */
+    margin-bottom: 0;
+    /* Remove bottom margin to avoid extra space */
+    position: fixed;
+    /* Fix the navbar to the top */
+    width: 100%;
+    /* Ensure the navbar spans the full width */
+    top: 0;
+    /* Fix it to the top */
+    left: 0;
+    /* Align with the left edge */
+    z-index: 1030;
+    /* Ensure it stays above other content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Add drop shadow */
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-nav>li>a {
+    color: #fff;
+}
+
+.navbar-custom .navbar-nav>li>a:hover,
+.navbar-custom .navbar-nav>.active>a,
+.navbar-custom .navbar-brand:hover {
+    color: #171d1a;
+    /* Change text color for hover and active states */
+    background-color: #f7f5f0;
+    /* Change background color for hover and active states */
+}
+.navbar-custom .navbar-nav>li>a:focus {
+    background-color: #b2845d;
+    /* Change background color on hover */
+    color: #fff;
+    /* Change text color on hover */
+}
+
+.navbar-custom .navbar-nav>.open>a,
+.navbar-custom .navbar-nav>.open>a:focus,
+.navbar-custom .navbar-nav>.open>a:hover {
+    color: #171d1a;
+    background-color: #e7e7e7;
+}
+
+.navbar-custom .dropdown-menu {
+    background-color: #f7f5f0;
+    /* Change background color of the dropdown menu */
+    border: none;
+}
+
+.navbar-custom .dropdown-menu>li>a {
+    color: #171d1a;
+    /* Ensure text is readable */
+}
+
+.navbar-custom .dropdown-menu>li>a:hover {
+    background-color: #b2845d;
+    /* Change background color on hover */
+    color: #fff;
+    /* Change text color on hover */
+}
+
+.navbar-custom .dropdown-menu>li>.active>a {
+    background-color: #f7f5f0;
+    /* Change background color for active dropdown items */
+    color: #171d1a;
+    /* Ensure text is readable */
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: #b2845d;
+    border-color: #b2845d;
+}
+
+.btn {
+    outline: none !important;
+    /* Remove outline */
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #9c6f4c;
+    /* Hover and focus color */
+    border-color: #9c6f4c;
+}
+
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary:focus:active,
+.btn-primary:focus.active,
+.btn-primary:hover:active,
+.btn-primary:hover.active {
+    background-color: #14141F !important;
+    /* Force the color change when clicked */
+    border-color: #14141F !important;
+    /* Force the border color change */
+}
+
+.btn-info {
+    margin-top: 10px;
+}
+
+/* Sound toggle button styles */
+#sound-toggle {
+    z-index: 2;
+    /* Ensure the button is above other elements */
+    background: transparent;
+    /* Transparent background */
+    border: none;
+    /* Remove border */
+    color: #fff;
+    /* Icon color */
+    font-size: 20px;
+    /* Set a consistent font size for icons */
+}
+
+#sound-toggle:hover,
+#sound-toggle:focus,
+#sound-toggle:active {
+    background: transparent;
+    /* Ensure background remains transparent on hover, focus, and active states */
+    border: none;
+    /* Ensure border remains removed on hover, focus, and active states */
+    box-shadow:unset;
+}
+
+/* Change the border color and add box-shadow to input fields on focus */
+.form-control:focus {
+    border-color: #9c6f4c;
+    box-shadow: 0 0 5px rgba(156, 111, 76, 0.5);
+    /* Add a soft shadow with the same color */
+    outline: none;
+    /* Removes the default outline */
+}
+
+/* Custom styles for Select2 dropdown options */
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #9c6f4c;
+    /* Change the highlight background color */
+    color: #fff;
+    /* Change the text color for better contrast */
+}
+/* Apply styling to Select2 search field to match .form-control */
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    border: 1px solid #9c6f4c; /* Match border color */
+    border-radius: 4px; /* Match border radius */
+    box-shadow: 0 0 0 0.2rem rgba(156, 111, 76, 0.25); /* Match box shadow */
+    padding: 6px 12px; /* Match padding */
+    color: #171d1a; /* Match text color */
+    outline: none;
+}
+
+/* Optional: Adjust placeholder color if needed */
+.select2-container--default .select2-search--dropdown .select2-search__field::placeholder {
+    color: #171d1a; /* Match text color */
+}
+
+
+select.no-search {
+    display: none;
+}
+
+html:lang(ar) .form-control {
+    direction: rtl;
+}
+
+
+/* Modal Styles */
+.modal-dialog {
+    margin: 30px auto;
+}
+
+.modal-content {
+    border-radius: 0;
+    /* Optional: remove border radius from modal */
+}
