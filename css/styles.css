@@ -22,6 +22,13 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+	font-family: "Droid Arabic Kufi";
+	src: url("/fonts/DroidKufi-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
 
 body {
     background-color: #f7f5f0;
@@ -30,7 +37,7 @@ body {
     /* Body text color */
     padding-top: 50px;
     /* Adjust if needed based on the height of the fixed navbar */
-    font-family: '29LT Bukra', sans-serif;
+    font-family: 'Droid Arabic Kufi','29LT Bukra', sans-serif;
 }
 
 html:lang(ar) body {
@@ -82,7 +89,9 @@ html:lang(ar) body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 25px;
+    width: 80%;
+    max-width: 500px;
 }
 
 .hero-content h1,
@@ -91,6 +100,37 @@ html:lang(ar) body {
     /* Remove default margin */
     padding: 0;
     /* Remove default padding */
+}
+.hero-content p, #scroll-to-admission {
+    font-size: 2rem;
+}
+
+section {
+    padding: 60px 20px;
+}
+
+.section-title {
+    display: block;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    margin-bottom: 35px;
+    color:#54542e;
+}
+.section-title::before {
+    content: "";
+    background-color: #b2845d;
+    width: 100px;
+    height: 5px;
+    display: block;
+    position: absolute;
+    z-index: -1;
+    bottom: -10px;
+    top: auto;
+    left: 50%;
+    transform: translate(-50%, 5px);
+    border-radius: 5px;
 }
 
 /* Navbar custom styles */
@@ -118,11 +158,11 @@ html:lang(ar) body {
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-nav>li>a {
     color: #fff;
+    transition: all 0.2s;
 }
 
 .navbar-custom .navbar-nav>li>a:hover,
-.navbar-custom .navbar-nav>.active>a,
-.navbar-custom .navbar-brand:hover {
+.navbar-custom .navbar-nav>.active>a {
     color: #171d1a;
     /* Change text color for hover and active states */
     background-color: #f7f5f0;
@@ -167,6 +207,94 @@ html:lang(ar) body {
     /* Ensure text is readable */
 }
 
+.navbar-custom .navbar-brand{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+}
+
+/* Set the height of the navbar */
+.navbar-custom.navbar {
+    min-height: 60px; /* Set the minimum height to 60px */
+}
+
+/* Adjust the padding of the navbar brand and links to center-align vertically */
+.navbar-custom .navbar-brand, 
+.navbar-custom .navbar-nav > li > a {
+    line-height: 60px; /* Match the line height to the navbar height */
+    height: 60px;
+    padding-top: 0; /* Remove top padding */
+    padding-bottom: 0; /* Remove bottom padding */
+}
+
+/* Ensure the dropdown menu items are properly aligned */
+.navbar-custom .navbar-nav > li > .dropdown-menu {
+    margin-top: 0; /* Adjust the margin if needed */
+}
+
+/* Ensure the navbar toggle are properly aligned */
+.navbar-custom .navbar-toggle {
+    margin-top: 14px; /* Adjust the margin if needed */
+}
+
+.navbar-custom .navbar-toggle .icon-bar {
+    background-color: #f8f6f0;
+}
+
+
+.navbar-custom .navbar-toggle:focus, .navbar-custom .navbar-toggle:hover {
+    background-color: #f8f6f0;
+    .icon-bar{
+        background-color: #b2845d;
+    }
+}
+
+
+
+
+/* fix padding when open modal*/
+@media (min-width: 768px) {
+    body.modal-open .navbar-custom {
+        padding-right: 17px;
+    }
+}
+
+
+ /* Set initial transparent background for the navbar on big screen */
+ @media (min-width: 768px) {
+    body{
+        padding-top: 0;
+    }
+    .navbar-custom.navbar {
+        box-shadow: none;
+        transition: background-color 0.3s ease-in-out;
+        min-height: 60px; /* Set the minimum height to 60px */
+        background: rgba(255, 255, 255, 0.1); /* Light transparency */
+        border: none;
+        backdrop-filter: blur(15px); /* Apply blur effect */
+        -webkit-backdrop-filter: blur(15px); /* For Safari */
+        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        
+    }
+
+    
+
+    /* Solid background when scrolled */
+    .navbar-custom.navbar.scrolled {
+        background: #b2845d;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /*
+    .navbar-custom:not(.scrolled) .navbar-brand, .navbar-custom:not(.scrolled) .navbar-nav > li > a {
+        line-height: 40px;
+        height: 40px;
+        border-radius: 8px;
+        margin-top: 25px;
+    }
+        */
+ }
 .footer {
     background-color: #333;
     color: #fff;
@@ -217,7 +345,7 @@ html:lang(ar) body {
     /* Remove border */
     color: #fff;
     /* Icon color */
-    font-size: 20px;
+    font-size: 3rem;
     /* Set a consistent font size for icons */
 }
 
@@ -262,6 +390,15 @@ html:lang(ar) body {
     color: #171d1a; /* Match text color */
 }
 
+.select2-container .select2-selection--single {
+    height: 34px;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 34px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 34px;
+}
 
 select.no-search {
     display: none;
@@ -271,13 +408,19 @@ html:lang(ar) .form-control {
     direction: rtl;
 }
 
+.d-none{
+    display: none!important;
+}
 
 /* Modal Styles */
 .modal-dialog {
     margin: 30px auto;
+    max-width: 500px;
 }
 
 .modal-content {
     border-radius: 0;
     /* Optional: remove border radius from modal */
 }
+
+

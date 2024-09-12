@@ -15,6 +15,17 @@ $(document).ready(function () {
     });
 });
 
+// Change navbar background when scrolling past hero section
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop()+200;
+    if (scroll > $('.hero-section').height()) {
+        $('.navbar').addClass('scrolled');
+    } else {
+        $('.navbar').removeClass('scrolled');
+    }
+});
+
+
 $(document).ready(function() {
     // Initialize Select2 on select elements
     $('select').select2({
