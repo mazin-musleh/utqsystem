@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Web Page</title>
+    <title>جمعية تحفيظ القرآن الكريم بعنيزة</title>
     <!-- Bootstrap 3.3.7 CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- jQuery UI CSS -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <!-- Font Awesome 4.7.0 CSS -->
@@ -31,33 +31,37 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="https://www.utqs.org.sa/" target="_blank"><img src="/img/logos/Horizontal_White_Logo.svg" height="45" class=" align-top" alt=""></a>
+                <a class="navbar-brand" href="https://www.utqs.org.sa/" target="_blank"><img
+                        src="img/logos/Horizontal_White_Logo.svg" height="45" class=" align-top" alt=""></a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="#admission-form" class="page-scroll">التسجيل للطلاب</a></li>
                     <li><a href="https://www.utqs.org.sa/" target="_blank">عن الجمعية</a></li>
-                    <li class="dropdown d-none">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-cogs"></i> Services <span class="caret"></span>
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle d-none" data-toggle="dropdown" role="button"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-cogs"></i> قائمة <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu d-none">
-                            <li><a href="#">Service 1</a></li>
-                            <li><a href="#">Service 2</a></li>
-                            <li><a href="#">Service 3</a></li>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">خدمة 1</a></li>
+                            <li><a href="#">خدمة 2</a></li>
+                            <li><a href="#">خدمة 3</a></li>
                         </ul>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" data-toggle="modal" data-target="#contactModal"><i class="fa fa-envelope"></i> اتصل بنا</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user"></i> دخول</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#contactModal"><i class="fa fa-envelope"></i> اتصل
+                            بنا</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user"></i> دخول</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <div class="hero-section">
+    <section class="hero-section">
         <video id="hero-video" autoplay muted loop class="hero-video">
             <source src="img/quran.webm" type="video/webm">
             Your browser does not support the video tag.
@@ -65,310 +69,380 @@
         <div class="hero-overlay"></div> <!-- Semi-transparent overlay for better text readability -->
         <div class="hero-content">
             <h1 class="d-none">جمعية تحفيظ القرآن الكريم في عنيزة</h1>
-            <img src="/img/logos/Vertical_White_Logo.svg" class="align-top" alt="">
+            <img src="img/logos/Vertical_White_Logo.svg" class="align-top" alt="">
             <p>رحلتكم المباركة لحفظ كتاب الله تبدأ من هنا</p>
             <!-- Scroll to Admission Form Button -->
             <button id="scroll-to-admission" class="btn btn-primary">استمارة تسجيل الطلاب</button>
             <!-- Sound toggle button -->
             <button id="sound-toggle" class="btn btn-default"><i class="fa fa-volume-up"></i></button>
         </div>
+    </section>
 
+    <!-- Statistics Section -->
+    <section class="statistics-section">
+        <div class="container">
+            <h2 class="section-title">خيركم من تعلم القرآن وعلّمه</h2>
+            <p class="section-descreption">بدعمكم وثقتكم نواصل تحقيق أهدافنا بتخريج نخبة من حفظة وحافظات كتاب الله عز وجل</p>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="statistics-card">
+                        <div class="icon-box"><i class="fa fa-users"></i></div>
+                        <div class="counter-name">المستفيدون</div>
+                        <div class="counter" data-target="5514">0</div>
+                        <div class="counter-description">طالب وطالبة</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="statistics-card">
+                        <div class="icon-box"><i class="fa fa-book"></i></div>
+                        <div class="counter-name">الكادر التعليمي</div>
+                        <div class="counter" data-target="450">0</div>
+                        <div class="counter-description">معلم ومعلمة</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="statistics-card">
+                        <div class="icon-box"><i class="fa fa-home"></i></div>
+                        <div class="counter-name">الفروع</div>
+                        <div class="counter" data-target="34">0</div>
+                        <div class="counter-description">مجمع ودار</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="statistics-card">
+                        <div class="icon-box"><i class="fa fa-trophy"></i></div>
+                        <div class="counter-name">الحفاظ</div>
+                        <div class="counter" data-target="1150">0</div>
+                        <div class="counter-description">حافظ وحافظة</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cover-section">
+        <a href="https://waqfy.sa/product-list/83cf5317-01ba-4ec1-825b-72b2c7dce35a" class="cover-link"
+            target="_blank"></a>
+        <img src="img/waqf_quraan_genration.jpg" />
+    </section>
+
+
+    <!-- Simple Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <div class="col-md-4">
+                <h2 class="section-title">مناهجنا محكّمة ومعتمدة</h2>
+                <p class="section-descreption">بإشراف نخبة من الأكاديميين المتخصصين من ذوي الخبرة في مجال تعليم القرآن الكريم</p>
+            </div>
+            <div class="col-md-8">
+                <video controls loading="lazy" poster="./img/manahejna-cover.jpg">
+                    <source src="./img/manahejna.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+    <div class="ad-banner container">
+        <a href="https://store.utq.org.sa/products/%D9%83%D9%81%D8%A7%D9%84%D8%A9-%D8%AD%D9%84%D9%82%D8%A9-%D8%AA%D8%AD%D9%81%D9%8A%D8%B8-%D8%A7%D9%84%D9%82%D8%B1%D8%A2%D9%86-1"
+            target="_blank">
+            <img src="./img/ads1.png" width="500" />
+        </a>
     </div>
-
     <!-- Student Admission Form Section -->
     <section id="admission-form">
         <div class="container">
-        
+
             <h2 class="section-title">نموذج تسجيل طلاب المجمعات والدور والروضات</h2>
-            <form id="student-admission-form">
+            <form id="student-admission-form" class="card">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="idNumber">رقم الهوية</label>
-                            <input type="text" class="form-control" id="idNumber" name="idNumber"
-                                placeholder="Enter ID Number" required>
+                    <div class="col-md-6 col-lg-8">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label for="idNumber">رقم الهوية</label>
+                                <input type="text" class="form-control" id="idNumber" name="idNumber"
+                                    placeholder="رقم هوية الطالب" required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="fullName">اسم الطالب الرباعي</label>
-                            <input type="text" class="form-control" id="fullName" name="fullName"
-                                placeholder="Enter Full Name" required>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label for="fullName">اسم الطالب الرباعي</label>
+                                <input type="text" class="form-control" id="fullName" name="fullName"
+                                    placeholder="اسم الطالب الرباعي" required>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="gender">الجنس</label>
-                            <select class="form-control no-search" id="gender" name="gender" required>
-                                <option value="" disabled selected>تحديد</option>
-                                <option value="male">ذكر</option>
-                                <option value="female">أنثى</option>
-                                <option value="other">طفل</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="birthday">تاريخ الميلاد</label>
-                            <input type="date" class="form-control" id="birthday" name="birthday" required>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="mobileNumber">رقم الجوال</label>
-                            <input type="tel" class="form-control" id="mobileNumber" name="mobileNumber"
-                                placeholder="Enter Mobile Number" required>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label for="gender">الجنس</label>
+                                <select class="form-control no-search" id="gender" name="gender" required>
+                                    <option value="" disabled selected>تحديد</option>
+                                    <option value="ذكر">ذكر ( المجمعات )</option>
+                                    <option value="أنثى">أنثى ( الدور )</option>
+                                    <option value="طفل">طفل ( روضة )</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="email">البريد الإلكتروني</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email"
-                                required>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label for="birthday">تاريخ الميلاد</label>
+                                <input type="date" class="form-control" id="birthday" name="birthday" required>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="educationalStage">المرحلة الدراسية</label>
-                            <select class="form-control" id="educationalStage" name="educationalStage" required>
-                                <option value="" disabled selected>تحديد</option>
-                                <option value="1">الروضـة</option>
-                                <option value="2">الإبتدائية</option>
-                                <option value="3">المتوسطة</option>
-                                <option value="4">الثانـوية</option>
-                                <option value="5">الجـامعية</option>
-                                <option value="6">الدراسـات العليا</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="guardianName">اسم ولي الأمر</label>
-                            <input type="text" class="form-control" id="guardianName" name="guardianName"
-                                placeholder="Enter Guardian's Name" required>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="guardianMobile">جوال ولي المر</label>
-                            <input type="tel" class="form-control" id="guardianMobile" name="guardianMobile"
-                                placeholder="Enter Guardian's Mobile Number" required>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label for="mobileNumber">رقم الجوال</label>
+                                <input type="tel" class="form-control" id="mobileNumber" name="mobileNumber"
+                                    placeholder="05xxxxxxxx" required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="district">حي السكن</label>
-                            <select class="form-control" id="district" name="district" required>
-                                <option value="" disabled selected>تحديد</option>
-                                <option value="1">حطين</option>
-                                <option value="2">سنام</option>
-                                <option value="3">الروضة</option>
-                                <option value="4">الدوحة</option>
-                                <option value="5">الحاجب</option>
-                                <option value="6">الرمال</option>
-                                <option value="7">الحفيرة</option>
-                                <option value="8">الصفا</option>
-                                <option value="9">الملك خالد</option>
-                                <option value="10">الملك فهد</option>
-                                <option value="11">الرياضى</option>
-                                <option value="12">القيروان</option>
-                                <option value="13">غرناطة</option>
-                                <option value="14">قرطبة</option>
-                                <option value="15">العقيق</option>
-                                <option value="16">الشفاء</option>
-                                <option value="17">المطار</option>
-                                <option value="18">السليمانية</option>
-                                <option value="19">الوسطى</option>
-                                <option value="20">المنطقة الصناعية الثانية</option>
-                                <option value="21">المنطقة الصناعية الاولى</option>
-                                <option value="22">الخليج</option>
-                                <option value="23">المستودعات</option>
-                                <option value="24">الهداء</option>
-                                <option value="25">الصالحية</option>
-                                <option value="26">المنتزة</option>
-                                <option value="27">اليرموك</option>
-                                <option value="28">النسيم</option>
-                                <option value="29">الرحمانية</option>
-                                <option value="30">دمشية</option>
-                                <option value="31">المحمدية</option>
-                                <option value="32">العبسة</option>
-                                <option value="33">بدر</option>
-                                <option value="34">الوهلان</option>
-                                <option value="35">مليحة</option>
-                                <option value="36">مربيدة</option>
-                                <option value="37">العليا</option>
-                                <option value="38">وسط المدينة</option>
-                                <option value="39">الريان</option>
-                                <option value="40">الفاخرية</option>
-                                <option value="41">النقيلية</option>
-                                <option value="42">السحيمية</option>
-                                <option value="43">البديعة</option>
-                                <option value="44">السلام</option>
-                                <option value="45">اشبيلية</option>
-                                <option value="46">العونية</option>
-                                <option value="47">الحمراء</option>
-                                <option value="48">الفيحاء</option>
-                                <option value="49">الجامعي</option>
-                                <option value="50">المروج</option>
-                                <option value="51">اليمامة</option>
-                                <option value="52">القادسية</option>
-                                <option value="53">المنار</option>
-                                <option value="54">الاشرفية</option>
-                                <option value="55">الخزامى</option>
-                                <option value="56">الروغاني</option>
-                                <option value="57">الزهراء</option>
-                                <option value="58">الصفراء</option>
-                                <option value="59">المباركية</option>
-                                <option value="60">المدوية</option>
-                                <option value="61">اليرموك</option>
-                                <option value="62">النظيم</option>
-                                <option value="63">التحلية</option>
-                                <option value="64">الجزيرة</option>
-                                <option value="65">البستان</option>
-                                <option value="66">الوفاء</option>
-                                <option value="67">الزاهر</option>
-                                <option value="68">الواحة</option>
-                                <option value="69">سوق الماشية</option>
-                                <option value="70">الجلده</option>
-                                <option value="71">الندى</option>
-                                <option value="72">ربوة الحاجب</option>
-                                <option value="73">الغضا</option>
-                                <option value="74">الشعيب</option>
-                                <option value="75">البويطن</option>
-                                <option value="76">النرجس</option>
-                                <option value="77">عكاظ</option>
-                                <option value="78">النفود</option>
-                                <option value="79">الوادي</option>
-                                <option value="80">القصور</option>
-                                <option value="81">الحديقة</option>
-                                <option value="82">المصيف</option>
-                                <option value="83">الجوهرة</option>
-                                <option value="84">الثقافة</option>
-                                <option value="85">المروة</option>
-                                <option value="86">الفخامة</option>
-                                <option value="87">الفيصلية</option>
-                                <option value="88">الزغيبة</option>
-                                <option value="89">الاسكان</option>
-                                <option value="90">الحزم</option>
-                                <option value="91">خارج عنيزة</option>
-                                <option value="92">الشريمية</option>
-                                <option value="93">الجوهرة</option>
-                                <option value="94">المربع الذهبي</option>
-                                <option value="95">النخيل</option>
-                                <option value="96">جادة الجمل</option>
-                                <option value="97">الغنامية</option>
-                                <option value="98">الودي</option>
-                                <option value="99">شرق الأشرفية</option>
-                                <option value="100">النزهة</option>
-                                <option value="101">الياسمين</option>
-                                <option value="102">الفرسان</option>
-                                <option value="103">الضليعة</option>
-                                <option value="104">العروبة</option>
-                                <option value="105">شيخه</option>
-                                <option value="106">القدس</option>
-                                <option value="107">سمحه</option>
-                                <option value="108">هلاله</option>
-                                <option value="109">الفايزية</option>
-                                <option value="110">ابن عيد</option>
-                                <option value="112">خارج المملكة</option>
-                                <option value="113">الجهيمية</option>
-                            </select>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label for="email">البريد الإلكتروني</label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="البريد الإلكتروني" required>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group branch houses" style="display:block">
-                            <label for="houses">اختر المجمع الأقرب لك</label>
-                            <select class="form-control" id="houses" rows="3" placeholder="" name="house">
-                                <option value="" disabled selected>تحديد</option>
-                                <option value="4">مجمع عتبة بن غزوان ( حي الريَّان )</option>
-                                <option value="5">مجمع عمر بن الخطاب ( حي الملك خالد )</option>
-                                <option value="6">مجمع سعيد بن زيد ( حي  الفيحاء )</option>
-                                <option value="7">مجمع مصعب بن عمير ( حي العليا )</option>
-                                <option value="8">مجمع الزبير بن العوام ( حي الفهد )</option>
-                                <option value="10">مجمع زيد بن ثابت ( حي الفاخرية )</option>
-                                <option value="11">مجمع أسامة بن زيد ( حي السليمانية )</option>
-                                <option value="12">مجمع عثمان بن عفان ( حي الأشرفية )</option>
-                                <option value="45">مجمع جامع المصيريعي ( شرق الأشرفية )</option>
-                                <option value="51">مجمع أبي بن كعب ( المحمدية )</option>
-                            </select>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label for="educationalStage">المرحلة الدراسية</label>
+                                <select class="form-control" id="educationalStage" name="educationalStage" required>
+                                    <option value="" disabled selected>تحديد</option>
+                                    <option value="1">الروضـة</option>
+                                    <option value="2">الإبتدائية</option>
+                                    <option value="3">المتوسطة</option>
+                                    <option value="4">الثانـوية</option>
+                                    <option value="5">الجـامعية</option>
+                                    <option value="6">الدراسـات العليا</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="form-group branch doors" style="display:none">
-                            <label for="doors">اختر الدار الأقرب لك</label>
-                            <select class="form-control" id="doors" rows="3" placeholder="" name="door">
-                                <option value="" disabled selected>تحديد</option>
-                                <option value="15">دار تراتيل الصباحية ( حي الشفاء )</option>
-                                <option value="16">دار ابن عيد المسائية ( ابن عيد )</option>
-                                <option value="17">دار البديعة المسائية ( حي البديعة )</option>
-                                <option value="18">دار الحركان المسائية ( حي الأشرفية )</option>
-                                <option value="19">دار الحميضي المسائية ( حي السلام )</option>
-                                <option value="20">دار العضيب المسائية ( حي الزاهر )</option>
-                                <option value="21">دار موضي الخنيني المسائية ( حي العليا )</option>
-                                <option value="22">دار غراس المسائية ( حى الأشرفية )</option>
-                                <option value="23">دار الفهد المسائية ( حى الفهد )</option>
-                                <option value="24">دار الفيحاء المسائية ( حي الفيحاء )</option>
-                                <option value="25">دار مشرفة المسائية ( حي مشرفة )</option>
-                                <option value="26">دار المطار المسائية ( حي المطار )</option>
-                                <option value="27">دار الملك خالد المسائية ( حي الملك خالد )</option>
-                                <option value="28">دار الودي المسائية ( حي الودي )</option>
-                                <option value="29">دار نورة الشبل المسائية ( حي الروابي )</option>
-                                <option value="30">دار الحركان الصباحية ( حي الأشرفية )</option>
-                                <option value="31">دار العضيب الصباحية ( حي الزاهر )</option>
-                                <option value="39">حلقات جمعية بيوت ( جمعية بيوت )</option>
-                                <option value="40">دار تراتيل المسائية ( حي الشفاء )</option>
-                                <option value="42">دار البويطن (  )</option>
-                                <option value="44">دار المقرأة الالكترونية ( دار المقرأة الالكترونية )</option>
-                                <option value="47">دار الفهد الصباحية ( حي الفهد )</option>
-                                <option value="48">دار موضي الفريهيدي المسائية ( الفاخرية )</option>
-                                <option value="50">دار نورة الشبل الصباحية ( مركز حسن النعيم )</option>
-                                <option value="52">دار الملك خالد الصباحية ( حي الملك خالد )</option>
-                            </select>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label for="guardianName">اسم ولي الأمر</label>
+                                <input type="text" class="form-control" id="guardianName" name="guardianName"
+                                    placeholder="اسم ولي الأمر" required>
+                            </div>
                         </div>
-                        <div class="form-group branch rodat" style="display:none">
-                            <label for="rodat">اختر الروضة الأقرب لك</label>
-                            <select class="form-control" id="rodat" rows="3" placeholder="" name="rodh">
-                                <option value="" disabled selected>تحديد</option>
-                                <option value="33">روضة البراعم الأولى ( حي السليمانية )</option>
-                                <option value="34">روضة البراعم الثانية ( حي الهدا )</option>
-                                <option value="35">روضة الأثير ( حي الفاخرية )</option>
-                            </select>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label for="guardianMobile">جوال ولي الأمر</label>
+                                <input type="tel" class="form-control" id="guardianMobile" name="guardianMobile"
+                                    placeholder="05xxxxxxxx" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label for="district">حي السكن</label>
+                                <select class="form-control" id="district" name="district" required>
+                                    <option value="" disabled selected>تحديد</option>
+                                    <option value="1">حطين</option>
+                                    <option value="2">سنام</option>
+                                    <option value="3">الروضة</option>
+                                    <option value="4">الدوحة</option>
+                                    <option value="5">الحاجب</option>
+                                    <option value="6">الرمال</option>
+                                    <option value="7">الحفيرة</option>
+                                    <option value="8">الصفا</option>
+                                    <option value="9">الملك خالد</option>
+                                    <option value="10">الملك فهد</option>
+                                    <option value="11">الرياضى</option>
+                                    <option value="12">القيروان</option>
+                                    <option value="13">غرناطة</option>
+                                    <option value="14">قرطبة</option>
+                                    <option value="15">العقيق</option>
+                                    <option value="16">الشفاء</option>
+                                    <option value="17">المطار</option>
+                                    <option value="18">السليمانية</option>
+                                    <option value="19">الوسطى</option>
+                                    <option value="20">المنطقة الصناعية الثانية</option>
+                                    <option value="21">المنطقة الصناعية الاولى</option>
+                                    <option value="22">الخليج</option>
+                                    <option value="23">المستودعات</option>
+                                    <option value="24">الهداء</option>
+                                    <option value="25">الصالحية</option>
+                                    <option value="26">المنتزة</option>
+                                    <option value="27">اليرموك</option>
+                                    <option value="28">النسيم</option>
+                                    <option value="29">الرحمانية</option>
+                                    <option value="30">دمشية</option>
+                                    <option value="31">المحمدية</option>
+                                    <option value="32">العبسة</option>
+                                    <option value="33">بدر</option>
+                                    <option value="34">الوهلان</option>
+                                    <option value="35">مليحة</option>
+                                    <option value="36">مربيدة</option>
+                                    <option value="37">العليا</option>
+                                    <option value="38">وسط المدينة</option>
+                                    <option value="39">الريان</option>
+                                    <option value="40">الفاخرية</option>
+                                    <option value="41">النقيلية</option>
+                                    <option value="42">السحيمية</option>
+                                    <option value="43">البديعة</option>
+                                    <option value="44">السلام</option>
+                                    <option value="45">اشبيلية</option>
+                                    <option value="46">العونية</option>
+                                    <option value="47">الحمراء</option>
+                                    <option value="48">الفيحاء</option>
+                                    <option value="49">الجامعي</option>
+                                    <option value="50">المروج</option>
+                                    <option value="51">اليمامة</option>
+                                    <option value="52">القادسية</option>
+                                    <option value="53">المنار</option>
+                                    <option value="54">الاشرفية</option>
+                                    <option value="55">الخزامى</option>
+                                    <option value="56">الروغاني</option>
+                                    <option value="57">الزهراء</option>
+                                    <option value="58">الصفراء</option>
+                                    <option value="59">المباركية</option>
+                                    <option value="60">المدوية</option>
+                                    <option value="61">اليرموك</option>
+                                    <option value="62">النظيم</option>
+                                    <option value="63">التحلية</option>
+                                    <option value="64">الجزيرة</option>
+                                    <option value="65">البستان</option>
+                                    <option value="66">الوفاء</option>
+                                    <option value="67">الزاهر</option>
+                                    <option value="68">الواحة</option>
+                                    <option value="69">سوق الماشية</option>
+                                    <option value="70">الجلده</option>
+                                    <option value="71">الندى</option>
+                                    <option value="72">ربوة الحاجب</option>
+                                    <option value="73">الغضا</option>
+                                    <option value="74">الشعيب</option>
+                                    <option value="75">البويطن</option>
+                                    <option value="76">النرجس</option>
+                                    <option value="77">عكاظ</option>
+                                    <option value="78">النفود</option>
+                                    <option value="79">الوادي</option>
+                                    <option value="80">القصور</option>
+                                    <option value="81">الحديقة</option>
+                                    <option value="82">المصيف</option>
+                                    <option value="83">الجوهرة</option>
+                                    <option value="84">الثقافة</option>
+                                    <option value="85">المروة</option>
+                                    <option value="86">الفخامة</option>
+                                    <option value="87">الفيصلية</option>
+                                    <option value="88">الزغيبة</option>
+                                    <option value="89">الاسكان</option>
+                                    <option value="90">الحزم</option>
+                                    <option value="91">خارج عنيزة</option>
+                                    <option value="92">الشريمية</option>
+                                    <option value="93">الجوهرة</option>
+                                    <option value="94">المربع الذهبي</option>
+                                    <option value="95">النخيل</option>
+                                    <option value="96">جادة الجمل</option>
+                                    <option value="97">الغنامية</option>
+                                    <option value="98">الودي</option>
+                                    <option value="99">شرق الأشرفية</option>
+                                    <option value="100">النزهة</option>
+                                    <option value="101">الياسمين</option>
+                                    <option value="102">الفرسان</option>
+                                    <option value="103">الضليعة</option>
+                                    <option value="104">العروبة</option>
+                                    <option value="105">شيخه</option>
+                                    <option value="106">القدس</option>
+                                    <option value="107">سمحه</option>
+                                    <option value="108">هلاله</option>
+                                    <option value="109">الفايزية</option>
+                                    <option value="110">ابن عيد</option>
+                                    <option value="112">خارج المملكة</option>
+                                    <option value="113">الجهيمية</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-8">
+                            <div class="form-group branchesList houses">
+                                <label for="branchesList">اختر الفرع الأقرب لك</label>
+                                <select class="form-control" id="branchesList" rows="3" placeholder="" name="house">
+                                    <option value="" disabled selected>حدد جنس الطالب أولاً</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 text-center">
+                            <button type="submit" class="btn btn-primary">تسجيل</button>
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="location">Location</label>
-                            <div id="map" style="width: 100%; height: 300px;">
-                                <!-- Embed Google Map iframe -->
-                                <iframe
-                                    src="https://www.google.com/maps/d/embed?mid=1hFe51lG_Egpn5Om80QTzZgeaEZpspgFq&amp;z=12.5"
-                                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="location">خريطة الفروع</label>
+                                <div id="map" style="width: 100%; height: 300px;">
+                                    <!-- Embed Google Map iframe -->
+                                    <iframe
+                                        src="https://www.google.com/maps/d/embed?mid=1hFe51lG_Egpn5Om80QTzZgeaEZpspgFq&amp;z=12.5"
+                                        width="100%" height="300" style="border:0;" allowfullscreen=""
+                                        loading="lazy"></iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer text-center">
+    <!-- Footer Section -->
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Your Company. All rights reserved. <i class="fa fa-copyright"></i></p>
+            <div class="row footer-top">
+                <!-- About Section -->
+                <div class="col-md-4">
+                    <h4>عن الجمعية</h4>
+                    <p class="text-justify">نحن جمعية خيرية لتعليم القرآن الكريم، والارتباط به، حفظًا وترتيلًا وفهمًا
+                        خدمةً للجميع، من خلال كفاءات مُنتِجة، ومناهج مُتقَنة، وتقنيات متقدمة، بمؤسسية منافِسَة، وبيئات
+                        جاذبة، تحقيقًا للخيرية، وتعظيمًا لكتاب الله تعالى، وسعيًا لمجتمع حيوي.</p>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="col-md-4">
+                    <h4>تواصل معنا</h4>
+                    <ul>
+                        <li><i class="fa fa-map-marker"></i> عنيزة - حي مريبدة - طريق الشيخ ابن عثيمين</li>
+                        <li><i class="fa fa-phone"></i> 0500054100</li>
+                        <li><i class="fa fa-envelope"></i> <a href="mailto:info@utq.org.sa">info@utq.org.sa</a></li>
+                    </ul>
+                    <div class="row">
+                        <!-- Social Media Links -->
+                        <div class="col-md-12 text-center">
+                            <div class="social-icons">
+                                <a href="https://x.com/tehfeeth_" target="_blank">
+                                    <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.12 0L19.43 27.5745L0 50H4.37L21.38 30.3723L35.12 50H50L29.6 20.8723L47.7 0H43.33L27.67 18.0745L15 0H0.12ZM6.55 3.43617H13.39L43.58 46.5532H36.74L6.55 3.43617Z"
+                                            fill="#005984"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://www.instagram.com/tehfeeth_" target="_blank"><i
+                                        class="fa fa-instagram"></i></a>
+                                <a href="https://www.youtube.com/user/tahfeeth" target="_blank"><i
+                                        class="fa fa-youtube-play"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-4">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="https://store.utq.org.sa/" target="_blank">متجر التبرعات</a></li>
+                        <li><a href="https://www.utqs.org.sa/news/" target="_blank">المركز الإعلامي</a></li>
+                        <li><a href="https://www.utqs.org.sa/pages/%D8%A3%D9%88%D9%82%D8%A7%D9%81-%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D9%8A%D8%A9/"
+                                target="_blank">الأوقاف</a></li>
+                        <li><a href="https://www.utqs.org.sa/chances/" target="_blank">التطوع</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            &copy; 2024 الجمعية الخيرية لتحفيظ القرآن الكريم بعنيزة
         </div>
     </footer>
 
@@ -381,85 +455,229 @@
     <!-- Include Select2 JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/js/select2.min.js"></script>
     <!-- Custom JavaScript -->
+    <script>
+        // Object to hold branches based on gender
+        const branches = {
+            ذكر: [
+                { id: '4', text: 'مجمع عتبة بن غزوان ( حي الريَّان )' },
+                { id: '5', text: 'مجمع عمر بن الخطاب ( حي الملك خالد )' },
+                { id: '6', text: 'مجمع سعيد بن زيد ( حي الفيحاء )' },
+                { id: '7', text: 'مجمع مصعب بن عمير ( حي العليا )' },
+                { id: '8', text: 'مجمع الزبير بن العوام ( حي الفهد )' },
+                { id: '10', text: 'مجمع زيد بن ثابت ( حي الفاخرية )' },
+                { id: '11', text: 'مجمع أسامة بن زيد ( حي السليمانية )' },
+                { id: '12', text: 'مجمع عثمان بن عفان ( حي الأشرفية )' },
+                { id: '45', text: 'مجمع جامع المصيريعي ( شرق الأشرفية )' },
+                { id: '51', text: 'مجمع أبي بن كعب ( المحمدية )' }
+
+            ],
+            أنثى: [
+                { id: '15', text: 'دار تراتيل الصباحية ( حي الشفاء )' },
+                { id: '16', text: 'دار ابن عيد المسائية ( ابن عيد )' },
+                { id: '17', text: 'دار البديعة المسائية ( حي البديعة )' },
+                { id: '18', text: 'دار الحركان المسائية ( حي الأشرفية )' },
+                { id: '19', text: 'دار الحميضي المسائية ( حي السلام )' },
+                { id: '20', text: 'دار العضيب المسائية ( حي الزاهر )' },
+                { id: '21', text: 'دار موضي الخنيني المسائية ( حي العليا )' },
+                { id: '22', text: 'دار غراس المسائية ( حى الأشرفية )' },
+                { id: '23', text: 'دار الفهد المسائية ( حى الفهد )' },
+                { id: '24', text: 'دار الفيحاء المسائية ( حي الفيحاء )' },
+                { id: '25', text: 'دار مشرفة المسائية ( حي مشرفة )' },
+                { id: '26', text: 'دار المطار المسائية ( حي المطار )' },
+                { id: '27', text: 'دار الملك خالد المسائية ( حي الملك خالد )' },
+                { id: '28', text: 'دار الودي المسائية ( حي الودي )' },
+                { id: '29', text: 'دار نورة الشبل المسائية ( حي الروابي )' },
+                { id: '30', text: 'دار الحركان الصباحية ( حي الأشرفية )' },
+                { id: '31', text: 'دار العضيب الصباحية ( حي الزاهر )' },
+                { id: '39', text: 'حلقات جمعية بيوت ( جمعية بيوت )' },
+                { id: '40', text: 'دار تراتيل المسائية ( حي الشفاء )' },
+                { id: '42', text: 'دار البويطن ( )' },
+                { id: '44', text: 'دار المقرأة الالكترونية ( دار المقرأة الالكترونية )' },
+                { id: '47', text: 'دار الفهد الصباحية ( حي الفهد )' },
+                { id: '48', text: 'دار موضي الفريهيدي المسائية ( الفاخرية )' },
+                { id: '50', text: 'دار نورة الشبل الصباحية ( مركز حسن النعيم )' },
+                { id: '52', text: 'دار الملك خالد الصباحية ( حي الملك خالد )' }
+            ],
+            طفل: [
+                { id: '33', text: 'روضة البراعم الأولى ( حي السليمانية )' },
+                { id: '34', text: 'روضة البراعم الثانية ( حي الهدا )' },
+                { id: '35', text: 'روضة الأثير ( حي الفاخرية )' }
+            ]
+        };
+
+        // Function to update the branches options based on selected gender
+        $('#gender').on('change', function () {
+            const selectedGender = $(this).val();
+            const branchesList = $('#branchesList');
+
+            // Clear previous options
+            branchesList.empty();
+
+            // Add default option
+            branchesList.append('<option value="">اختر فرع</option>');
+
+            // Add new options based on selected gender
+            if (branches[selectedGender]) {
+                branches[selectedGender].forEach(branche => {
+                    branchesList.append(new Option(branche.text, branche.id));
+                });
+            }
+
+            // Refresh Select2 to show updated options
+            branchesList.trigger('change');
+        });
+    </script>
     <script src="js/scripts.js"></script>
 
-    <!-- jQuery UI Dialog -->
-    <div id="dialog" title="Dialog Example" style="display: none;">
-        <p>This is a simple jQuery UI dialog.</p>
-    </div>
-
     <!-- Login Modal -->
-    <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
+    <div id="loginModal" class="modal fade login-form" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Login</h4>
+                    <h4 class="modal-title">تسجيل الدخول إلى نظام إنجاز</h4>
                 </div>
                 <div class="modal-body">
-                    <form id="loginForm" class="form-horizontal">
-                        <div class="form-group">
-                            <label for="loginEmail" class="col-sm-2 control-label">Email</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control" id="loginEmail"
-                                    placeholder="johndoe@example.com" required>
-                            </div>
+                    <!-- Tabs for user type selection -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#student" aria-controls="student" role="tab" data-toggle="tab">طالب</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#teacher" aria-controls="teacher" role="tab" data-toggle="tab">معلم</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#admin" aria-controls="admin" role="tab" data-toggle="tab">إداري</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <!-- Student Login Form -->
+                        <div role="tabpanel" class="tab-pane active" id="student">
+                            <form>
+                                <div class="form-group">
+                                    <label for="student-id">اسم المستخدم</label>
+                                    <input type="text" class="form-control" id="student-id"
+                                        placeholder="اسم المتخدم" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="student-password">كلمة المرور</label>
+                                    <input type="password" class="form-control" id="student-password"
+                                        placeholder="كلمة المرور" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">تسجيل الدخول كطالب</button>
+                                <a href="#forgot" class="forgot" aria-controls="forgot" role="tab"
+                                    data-toggle="tab">نسيت كلمة المرور؟</a>
+                            </form>
                         </div>
-                        <div class="form-group">
-                            <label for="loginPassword" class="col-sm-2 control-label">Password</label>
-                            <div class="col-sm-10">
-                                <input type="password" class="form-control" id="loginPassword" placeholder="Password"
-                                    required>
-                            </div>
+
+                        <!-- Teacher Login Form -->
+                        <div role="tabpanel" class="tab-pane" id="teacher">
+                            <form>
+                                <div class="form-group">
+                                    <label for="teacher-email">اسم المستخدم</label>
+                                    <input type="email" class="form-control" id="teacher-email"
+                                        placeholder="اسم المستخدم" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="teacher-password">كلمة المرور</label>
+                                    <input type="password" class="form-control" id="teacher-password"
+                                        placeholder="كلمة المرور" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">تسجيل الدخول كمعلم</button>
+                                <a href="#forgot" class="forgot" aria-controls="forgot" role="tab"
+                                    data-toggle="tab">نسيت كلمة المرور؟</a>
+                            </form>
                         </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-primary">Login</button>
-                            </div>
+
+                        <!-- Admin Login Form -->
+                        <div role="tabpanel" class="tab-pane" id="admin">
+                            <form>
+                                <div class="form-group">
+                                    <label for="admin-username">اسم المستخدم</label>
+                                    <input type="text" class="form-control" id="admin-username"
+                                        placeholder="اسم المستخدم" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="admin-password">كلمة المرور</label>
+                                    <input type="password" class="form-control" id="admin-password"
+                                        placeholder="كلمة المرور" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">تسجيل الدخول كإداري</button>
+                                <a href="#forgot" class="forgot" aria-controls="forgot" role="tab"
+                                    data-toggle="tab">نسيت كلمة المرور؟</a>
+                            </form>
                         </div>
-                    </form>
+                        <!-- Forgot Password Form -->
+                        <div role="tabpanel" class="tab-pane" id="forgot">
+                            <form>
+                                <div class="form-group">
+                                    <label for="forgot-email">البريد الإلكتروني</label>
+                                    <input type="email" class="form-control" id="forgot-email"
+                                        placeholder="أكتب بريدك الإلكتروني المسجل" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">استعادة كلمة المرور</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Contact Form Modal -->
-<div id="contactModal" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title">Contact Us</h4>
+    <div id="contactModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">اتصل بنا</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">الأسم</label>
+                            <input type="text" class="form-control" id="contactName" placeholder="الأسم"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">البريد الإلكتروني</label>
+                            <input type="email" class="form-control" id="contactEmail" placeholder="البريد الإلكتروني"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">نص الرسالة</label>
+                            <textarea class="form-control" id="contactMessage" rows="4" placeholder="نص الرسالة"
+                                required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>
+                    <button type="submit" form="contactForm" class="btn btn-primary">إرسال</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE?autoplay=1" frameborder="0"
+                        allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
             </div>
-            <div class="modal-body">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="contactName">Name</label>
-                        <input type="text" class="form-control" id="contactName" placeholder="Enter your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactEmail">Email</label>
-                        <input type="email" class="form-control" id="contactEmail" placeholder="Enter your email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactMessage">Message</label>
-                        <textarea class="form-control" id="contactMessage" rows="4" placeholder="Enter your message" required></textarea>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" form="contactForm" class="btn btn-primary">Send Message</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+        </div>
+    </div>
 
 </body>
 

@@ -1,43 +1,51 @@
 /* Custom styles */
+:root {
+--clr-Brown: #b2845d;
+--clr-offWhite: #f7f5f0;
+--clr-blackGreen: #171d1a;
+--clr-blackBlue: #14141f;
+--clr-blackOrange: #171210;
+--clr-blackOrange2:#211a17;
+--clr-Olive: #54542e;
+}
+
 @font-face {
     font-family: '29LT Bukra';
-    src: url('/fonts/29ltbukraregular.otf') format('opentype'),
-        url('/fonts/29ltbukraregular.ttf') format('truetype');
+    src: url('../fonts/29ltbukraregular.otf') format('opentype'),
+        url('../fonts/29ltbukraregular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: '29LT Bukra Bold';
-    src: url('/fonts/29ltbukrabold.otf') format('opentype'),
-        url('/fonts/29ltbukrabold.ttf') format('truetype');
+    src: url('../fonts/29ltbukrabold.otf') format('opentype'),
+        url('../fonts/29ltbukrabold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: '29LT Bukra light';
-    src: url('/fonts/29ltbukralight.otf') format('opentype'),
-        url('/fonts/29ltbukralight.ttf') format('truetype');
+    src: url('../fonts/29ltbukralight.otf') format('opentype'),
+        url('../fonts/29ltbukralight.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
-	font-family: "Droid Arabic Kufi";
-	src: url("/fonts/DroidKufi-Regular.ttf") format("truetype");
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
+    font-family: "Droid Arabic Kufi";
+    src: url("../fonts/DroidKufi-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 body {
-    background-color: #f7f5f0;
-    /* Body background color */
-    color: #171d1a;
-    /* Body text color */
+    background-color: var(--clr-offWhite);
+    color: var(--clr-blackGreen);
     padding-top: 50px;
-    /* Adjust if needed based on the height of the fixed navbar */
-    font-family: 'Droid Arabic Kufi','29LT Bukra', sans-serif;
+    font-family: 'Droid Arabic Kufi', '29LT Bukra', sans-serif;
 }
 
 html:lang(ar) body {
@@ -48,7 +56,6 @@ html:lang(ar) body {
     position: relative;
     overflow: hidden;
     height: 100vh;
-    /* Full viewport height */
 }
 
 .hero-video {
@@ -59,7 +66,14 @@ html:lang(ar) body {
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    /* Ensure the video stays behind the content */
+
+}
+
+/* hide black bar in video*/
+@media (max-width: 768px) {
+    .hero-video {
+        transform: scale(1.18);
+    }
 }
 
 .hero-overlay {
@@ -69,9 +83,7 @@ html:lang(ar) body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    /* Semi-transparent black overlay */
     z-index: -1;
-    /* Ensure the overlay is behind the text */
 }
 
 .hero-content {
@@ -80,12 +92,9 @@ html:lang(ar) body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
-    /* Ensure text is readable */
     text-align: center;
     z-index: 1;
-    /* Ensure the content stays above the video */
     padding: 0 20px;
-    /* Add some padding to ensure text doesn't touch edges */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -97,16 +106,22 @@ html:lang(ar) body {
 .hero-content h1,
 .hero-content p {
     margin: 0;
-    /* Remove default margin */
     padding: 0;
-    /* Remove default padding */
 }
-.hero-content p, #scroll-to-admission {
+
+.hero-content p,
+#scroll-to-admission {
     font-size: 2rem;
 }
 
 section {
     padding: 60px 20px;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 30px 10px;
+    }
 }
 
 .section-title {
@@ -116,11 +131,13 @@ section {
     margin-left: auto;
     position: relative;
     margin-bottom: 35px;
-    color:#54542e;
+    color: var(--clr-Olive);
+    text-align: center;
 }
+
 .section-title::before {
     content: "";
-    background-color: #b2845d;
+    background-color: var(--clr-Brown);
     width: 100px;
     height: 5px;
     display: block;
@@ -131,28 +148,70 @@ section {
     left: 50%;
     transform: translate(-50%, 5px);
     border-radius: 5px;
+    z-index: 2;
 }
+
+.section-descreption {
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+form.card {
+    padding: 25px;
+    background: #e8e8e8;
+    border-radius: 8px;
+    border: 1px solid #cecece;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-image: url(../img/block_testimonial1_background.png);
+    background-position: top left;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.cover-section {
+    position: relative;
+    padding: 0;
+
+    img {
+        width: 100%;
+    }
+
+    a.cover-link {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+}
+
+
+.cover-section::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: rgb(247, 245, 240);
+    background: linear-gradient(180deg, rgba(247, 245, 240, 1) 0%, rgba(247, 245, 240, 0) 20%, rgba(247, 245, 240, 0) 80%, rgba(247, 245, 240, 1) 100%);
+}
+
 
 /* Navbar custom styles */
 .navbar-custom {
-    background-color: #b2845d;
-    border-color: #b2845d;
+    background-color: var(--clr-Brown);
+    border-color: var(--clr-Brown);
     border-radius: 0;
-    /* Remove border-radius */
     margin-bottom: 0;
-    /* Remove bottom margin to avoid extra space */
     position: fixed;
-    /* Fix the navbar to the top */
     width: 100%;
-    /* Ensure the navbar spans the full width */
     top: 0;
-    /* Fix it to the top */
     left: 0;
-    /* Align with the left edge */
     z-index: 1030;
-    /* Ensure it stays above other content */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Add drop shadow */
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .navbar-custom .navbar-brand,
@@ -163,51 +222,42 @@ section {
 
 .navbar-custom .navbar-nav>li>a:hover,
 .navbar-custom .navbar-nav>.active>a {
-    color: #171d1a;
-    /* Change text color for hover and active states */
-    background-color: #f7f5f0;
-    /* Change background color for hover and active states */
+    color: var(--clr-blackGreen);
+    background-color: var(--clr-offWhite);
 }
+
 .navbar-custom .navbar-nav>li>a:focus {
-    background-color: #b2845d;
-    /* Change background color on hover */
+    background-color: var(--clr-Brown);
     color: #fff;
-    /* Change text color on hover */
 }
 
 .navbar-custom .navbar-nav>.open>a,
 .navbar-custom .navbar-nav>.open>a:focus,
 .navbar-custom .navbar-nav>.open>a:hover {
-    color: #171d1a;
+    color: var(--clr-blackGreen);
     background-color: #e7e7e7;
 }
 
 .navbar-custom .dropdown-menu {
-    background-color: #f7f5f0;
-    /* Change background color of the dropdown menu */
+    background-color: var(--clr-offWhite);
     border: none;
 }
 
 .navbar-custom .dropdown-menu>li>a {
-    color: #171d1a;
-    /* Ensure text is readable */
+    color: var(--clr-blackGreen);
 }
 
 .navbar-custom .dropdown-menu>li>a:hover {
-    background-color: #b2845d;
-    /* Change background color on hover */
+    background-color: var(--clr-Brown);
     color: #fff;
-    /* Change text color on hover */
 }
 
 .navbar-custom .dropdown-menu>li>.active>a {
-    background-color: #f7f5f0;
-    /* Change background color for active dropdown items */
-    color: #171d1a;
-    /* Ensure text is readable */
+    background-color: var(--clr-offWhite);
+    color: var(--clr-blackGreen);
 }
 
-.navbar-custom .navbar-brand{
+.navbar-custom .navbar-brand {
     padding: 0;
     display: flex;
     align-items: center;
@@ -216,26 +266,24 @@ section {
 
 /* Set the height of the navbar */
 .navbar-custom.navbar {
-    min-height: 60px; /* Set the minimum height to 60px */
+    min-height: 60px;
+    /* Set the minimum height to 60px */
 }
 
-/* Adjust the padding of the navbar brand and links to center-align vertically */
-.navbar-custom .navbar-brand, 
-.navbar-custom .navbar-nav > li > a {
-    line-height: 60px; /* Match the line height to the navbar height */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-nav>li>a {
+    line-height: 60px;
     height: 60px;
-    padding-top: 0; /* Remove top padding */
-    padding-bottom: 0; /* Remove bottom padding */
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
-/* Ensure the dropdown menu items are properly aligned */
-.navbar-custom .navbar-nav > li > .dropdown-menu {
-    margin-top: 0; /* Adjust the margin if needed */
+.navbar-custom .navbar-nav>li>.dropdown-menu {
+    margin-top: 0;
 }
 
-/* Ensure the navbar toggle are properly aligned */
 .navbar-custom .navbar-toggle {
-    margin-top: 14px; /* Adjust the margin if needed */
+    margin-top: 14px;
 }
 
 .navbar-custom .navbar-toggle .icon-bar {
@@ -243,10 +291,12 @@ section {
 }
 
 
-.navbar-custom .navbar-toggle:focus, .navbar-custom .navbar-toggle:hover {
+.navbar-custom .navbar-toggle:focus,
+.navbar-custom .navbar-toggle:hover {
     background-color: #f8f6f0;
-    .icon-bar{
-        background-color: #b2845d;
+
+    .icon-bar {
+        background-color: var(--clr-Brown);
     }
 }
 
@@ -261,61 +311,273 @@ section {
 }
 
 
- /* Set initial transparent background for the navbar on big screen */
- @media (min-width: 768px) {
-    body{
+/* Set initial transparent background for the navbar on big screen */
+@media (min-width: 768px) {
+    body {
         padding-top: 0;
     }
-    .navbar-custom.navbar {
+
+    .navbar-custom.navbar.overHero {
         box-shadow: none;
         transition: background-color 0.3s ease-in-out;
-        min-height: 60px; /* Set the minimum height to 60px */
-        background: rgba(255, 255, 255, 0.1); /* Light transparency */
+        min-height: 60px;
+        background: rgba(255, 255, 255, 0.1);
         border: none;
-        backdrop-filter: blur(15px); /* Apply blur effect */
-        -webkit-backdrop-filter: blur(15px); /* For Safari */
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        /* For Safari */
         transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        
     }
 
-    
+}
 
-    /* Solid background when scrolled */
-    .navbar-custom.navbar.scrolled {
-        background: #b2845d;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
 
-    /*
-    .navbar-custom:not(.scrolled) .navbar-brand, .navbar-custom:not(.scrolled) .navbar-nav > li > a {
-        line-height: 40px;
-        height: 40px;
-        border-radius: 8px;
-        margin-top: 25px;
-    }
-        */
- }
-.footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
+.login-form a.forgot {
+    display: block;
+    width: fit-content;
+    margin: auto;
+    margin-top: 15px;
+    color: var(--clr-blackBlue);
+}
+
+.login-form a.forgot:hover {
+    color: var(--clr-Brown);
+}
+
+.statistics-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.statistics-card {
+    background: #fff;
+    border-radius: 32px;
+    padding: 30px 20px;
+    margin: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-image: url(../img/block_testimonial1_background.png);
+    background-position: top left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.statistics-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.icon-box {
+    font-size: 5rem;
+    color: #777;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+}
+
+.statistics-card:hover .icon-box {
+    color: var(--clr-blackBlue);
+}
+
+.statistics-card .counter {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--clr-Brown);
+    margin-bottom: 10px;
+}
+
+.statistics-card .counter-name {
+    font-size: 1.8rem;
+    color: var(--clr-Olive);
+    font-weight: 600;
+    margin: 10px;
+}
+
+.statistics-card .counter-description {
+    font-size: 1.5rem;
+    color: var(--clr-blackGreen);
+}
+
+.video-section {
+    padding: 60px 0;
+}
+
+.video-section .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+    row-gap: 25px;
+}
+
+.video-section video {
     width: 100%;
+    height: auto;
+    box-shadow: 6px 7px 10px 0px rgb(0 0 0 / 22%);
+    border-radius: 16px;
+}
+
+.ad-banner {
+    margin: 60px 0;
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .ad-banner {
+        margin: 10px 0;
+    }
+}
+
+.ad-banner img{
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+}
+
+.footer {
+    background-color: var(--clr-blackOrange);
+    color: var(--clr-offWhite);
+    padding: 40px 0;
+    font-size: 14px;
+
+}
+
+.footer .footer-top {
+    padding-bottom: 30px;
+}
+
+.footer .footer-top .col-md-4 {
+    margin-bottom: 20px;
+}
+
+.footer h4 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    color: var(--clr-offWhite);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: var(--clr-Brown);
+}
+
+.footer .social-icons {
+    display: flex;
+    align-content: flex-start;
+    gap: 10px;
+}
+
+.footer .social-icons a {
+    color: var(--clr-offWhite);
+    transition: color 0.3s;
+    font-size: 2rem;
+}
+
+.footer .social-icons a:hover {
+    color: var(--clr-Brown);
+}
+
+.fa-x-twitter {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.footer .social-icons path {
+    fill: #fff;
+    transition: all 0.3s;
+}
+
+.footer .social-icons a:hover path {
+    fill: var(--clr-Brown);
+}
+
+.footer .social-icons svg {
+    width: 1.5rem;
+}
+
+footer .footer-bottom {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+}
+
+footer .footer-bottom {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    background-color: var(--clr-blackOrange2);
+    position: absolute;
+    width: 100%;
+    padding: 20px;
+}
+
+footer .footer-bottom a {
+    color: var(--clr-Brown);
+    text-decoration: none;
+}
+
+.nav-tabs>li>a {
+    color: var(--clr-Brown);
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+    color: var(--clr-blackGreen);
+    background-color: #e8e8e8;
+}
+
+.tab-content .form-group label {
+    color: var(--clr-blackGreen);
+}
+
+.tab-content .btn-primary {
+    background-color: var(--clr-Brown);
+    border-color: var(--clr-Brown);
+}
+
+.tab-content .btn-primary:hover,
+.tab-content .btn-primary:focus {
+    background-color: var(--clr-blackBlue);
+    border-color: var(--clr-blackBlue);
+}
+
+.tab-content {
+    padding: 25px;
+    border: 1px solid #dddddd;
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    background-color: #e8e8e8;
 }
 
 .btn-primary {
-    background-color: #b2845d;
-    border-color: #b2845d;
+    background-color: var(--clr-Brown);
+    border-color: var(--clr-Brown);
 }
 
 .btn {
     outline: none !important;
-    /* Remove outline */
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
     background-color: #9c6f4c;
-    /* Hover and focus color */
     border-color: #9c6f4c;
 }
 
@@ -325,10 +587,8 @@ section {
 .btn-primary:focus.active,
 .btn-primary:hover:active,
 .btn-primary:hover.active {
-    background-color: #14141F !important;
-    /* Force the color change when clicked */
-    border-color: #14141F !important;
-    /* Force the border color change */
+    background-color: var(--clr-blackBlue) !important;
+    border-color: var(--clr-blackBlue) !important;
 }
 
 .btn-info {
@@ -338,64 +598,56 @@ section {
 /* Sound toggle button styles */
 #sound-toggle {
     z-index: 2;
-    /* Ensure the button is above other elements */
     background: transparent;
-    /* Transparent background */
     border: none;
-    /* Remove border */
     color: #fff;
-    /* Icon color */
     font-size: 3rem;
-    /* Set a consistent font size for icons */
 }
 
 #sound-toggle:hover,
 #sound-toggle:focus,
 #sound-toggle:active {
     background: transparent;
-    /* Ensure background remains transparent on hover, focus, and active states */
     border: none;
-    /* Ensure border remains removed on hover, focus, and active states */
-    box-shadow:unset;
+    box-shadow: unset;
 }
 
 /* Change the border color and add box-shadow to input fields on focus */
 .form-control:focus {
     border-color: #9c6f4c;
     box-shadow: 0 0 5px rgba(156, 111, 76, 0.5);
-    /* Add a soft shadow with the same color */
     outline: none;
-    /* Removes the default outline */
 }
 
 /* Custom styles for Select2 dropdown options */
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
     background-color: #9c6f4c;
-    /* Change the highlight background color */
     color: #fff;
-    /* Change the text color for better contrast */
 }
+
 /* Apply styling to Select2 search field to match .form-control */
 .select2-container--default .select2-search--dropdown .select2-search__field {
-    border: 1px solid #9c6f4c; /* Match border color */
-    border-radius: 4px; /* Match border radius */
-    box-shadow: 0 0 0 0.2rem rgba(156, 111, 76, 0.25); /* Match box shadow */
-    padding: 6px 12px; /* Match padding */
-    color: #171d1a; /* Match text color */
+    border: 1px solid #9c6f4c;
+    border-radius: 4px;
+    box-shadow: 0 0 0 0.2rem rgba(156, 111, 76, 0.25);
+    padding: 6px 12px;
+    color: var(--clr-blackGreen);
     outline: none;
 }
 
 /* Optional: Adjust placeholder color if needed */
 .select2-container--default .select2-search--dropdown .select2-search__field::placeholder {
-    color: #171d1a; /* Match text color */
+    color: var(--clr-blackGreen);
 }
 
 .select2-container .select2-selection--single {
     height: 34px;
 }
+
 .select2-container--default .select2-selection--single .select2-selection__rendered {
     line-height: 34px;
 }
+
 .select2-container--default .select2-selection--single .select2-selection__arrow {
     height: 34px;
 }
@@ -408,8 +660,8 @@ html:lang(ar) .form-control {
     direction: rtl;
 }
 
-.d-none{
-    display: none!important;
+.d-none {
+    display: none !important;
 }
 
 /* Modal Styles */
@@ -417,10 +669,3 @@ html:lang(ar) .form-control {
     margin: 30px auto;
     max-width: 500px;
 }
-
-.modal-content {
-    border-radius: 0;
-    /* Optional: remove border radius from modal */
-}
-
-
