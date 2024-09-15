@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>جمعية تحفيظ القرآن الكريم بعنيزة</title>
     <!-- Bootstrap 3.3.7 CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="./backend/themes/utqsystem/css/bootstrap.min.css">
     <!-- jQuery UI CSS -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <!-- Font Awesome 4.7.0 CSS -->
@@ -15,7 +15,7 @@
     <!-- Include Select2 CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/css/select2.min.css" rel="stylesheet" />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="./backend/themes/utqsystem/css/styles.css">
 </head>
 
 <body>
@@ -32,7 +32,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="https://www.utqs.org.sa/" target="_blank"><img
-                        src="img/logos/Horizontal_White_Logo.svg" height="45" class=" align-top" alt=""></a>
+                        src="./backend/themes/utqsystem/img/logos/Horizontal_White_Logo.svg" height="45" class=" align-top" alt=""></a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav">
@@ -63,13 +63,13 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <video id="hero-video" autoplay muted loop class="hero-video">
-            <source src="img/quran.webm" type="video/webm">
+            <source src="./backend/themes/utqsystem/img/quran.webm" type="video/webm">
             Your browser does not support the video tag.
         </video>
         <div class="hero-overlay"></div> <!-- Semi-transparent overlay for better text readability -->
         <div class="hero-content">
             <h1 class="d-none">جمعية تحفيظ القرآن الكريم في عنيزة</h1>
-            <img src="img/logos/Vertical_White_Logo.svg" class="align-top" alt="">
+            <img src="./backend/themes/utqsystem/img/logos/Vertical_White_Logo.svg" class="align-top" alt="">
             <p>رحلتكم المباركة لحفظ كتاب الله تبدأ من هنا</p>
             <!-- Scroll to Admission Form Button -->
             <button id="scroll-to-admission" class="btn btn-primary">استمارة تسجيل الطلاب</button>
@@ -80,8 +80,9 @@
 
     <!-- Statistics Section -->
     <section class="statistics-section">
+        <img class="outline-logo-bg" src="./backend/themes/utqsystem/img/logos/Only_Icon_Outlined.svg" />
         <div class="container">
-            <h2 class="section-title">خيركم من تعلم القرآن وعلّمه</h2>
+            <h2 class="section-title">خيركم من تعلّم القرآن وعلّمه</h2>
             <p class="section-descreption">بدعمكم وثقتكم نواصل تحقيق أهدافنا بتخريج نخبة من حفظة وحافظات كتاب الله عز وجل</p>
             <div class="row">
                 <div class="col-md-3">
@@ -123,20 +124,21 @@
     <section class="cover-section">
         <a href="https://waqfy.sa/product-list/83cf5317-01ba-4ec1-825b-72b2c7dce35a" class="cover-link"
             target="_blank"></a>
-        <img src="img/waqf_quraan_genration.jpg" />
+        <img src="./backend/themes/utqsystem/img/waqf_quraan_genration.jpg" />
     </section>
 
 
     <!-- Simple Video Section -->
     <section class="video-section">
+        <img class="outline-logo-bg right" src="./backend/themes/utqsystem/img/logos/Only_Icon_Outlined.svg" />
         <div class="container">
             <div class="col-md-4">
                 <h2 class="section-title">مناهجنا محكّمة ومعتمدة</h2>
                 <p class="section-descreption">بإشراف نخبة من الأكاديميين المتخصصين من ذوي الخبرة في مجال تعليم القرآن الكريم</p>
             </div>
             <div class="col-md-8">
-                <video controls loading="lazy" poster="./img/manahejna-cover.jpg">
-                    <source src="./img/manahejna.mp4" type="video/mp4">
+                <video controls loading="lazy" poster="./backend/themes/utqsystem/img/manahejna-cover.jpg">
+                    <source src="./backend/themes/utqsystem/img/manahejna.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -145,11 +147,12 @@
     <div class="ad-banner container">
         <a href="https://store.utq.org.sa/products/%D9%83%D9%81%D8%A7%D9%84%D8%A9-%D8%AD%D9%84%D9%82%D8%A9-%D8%AA%D8%AD%D9%81%D9%8A%D8%B8-%D8%A7%D9%84%D9%82%D8%B1%D8%A2%D9%86-1"
             target="_blank">
-            <img src="./img/ads1.png" width="500" />
+            <img src="./backend/themes/utqsystem/img/ads1.png" width="500" />
         </a>
     </div>
     <!-- Student Admission Form Section -->
     <section id="admission-form">
+        <img class="outline-logo-bg" src="./backend/themes/utqsystem/img/logos/Only_Icon_Outlined.svg" />
         <div class="container">
 
             <h2 class="section-title">نموذج تسجيل طلاب المجمعات والدور والروضات</h2>
@@ -402,8 +405,8 @@
                 <!-- Contact Information -->
                 <div class="col-md-4">
                     <h4>تواصل معنا</h4>
-                    <ul>
-                        <li><i class="fa fa-map-marker"></i> عنيزة - حي مريبدة - طريق الشيخ ابن عثيمين</li>
+                    <ul class="contactUs">
+                        <li><i class="fa fa-map-marker"></i> <a href="https://maps.app.goo.gl/LqcQzekp6G9p32ou7" target="_blank">عنيزة - حي مريبدة - طريق الشيخ ابن عثيمين</a></li>
                         <li><i class="fa fa-phone"></i> 0500054100</li>
                         <li><i class="fa fa-envelope"></i> <a href="mailto:info@utq.org.sa">info@utq.org.sa</a></li>
                     </ul>
@@ -451,7 +454,7 @@
     <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <!-- Bootstrap 3.3.7 JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="./backend/themes/utqsystem/js/bootstrap.min.js"></script>
     <!-- Include Select2 JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/js/select2.min.js"></script>
     <!-- Custom JavaScript -->
@@ -527,7 +530,7 @@
             branchesList.trigger('change');
         });
     </script>
-    <script src="js/scripts.js"></script>
+    <script src="./backend/themes/utqsystem/js/scripts.js"></script>
 
     <!-- Login Modal -->
     <div id="loginModal" class="modal fade login-form" tabindex="-1" role="dialog">

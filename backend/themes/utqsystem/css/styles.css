@@ -2,6 +2,7 @@
 :root {
 --clr-Brown: #b2845d;
 --clr-offWhite: #f7f5f0;
+--clr-LightGray: #f1f1f1;
 --clr-blackGreen: #171d1a;
 --clr-blackBlue: #14141f;
 --clr-blackOrange: #171210;
@@ -116,6 +117,7 @@ html:lang(ar) body {
 
 section {
     padding: 60px 20px;
+    position: relative;
 }
 
 @media (max-width: 768px) {
@@ -156,10 +158,33 @@ section {
     text-align: center;
 }
 
+.outline-logo-bg {
+    position: absolute;
+    z-index: -1;
+    top: 50px;
+    bottom: 50px;
+    left: 50px;
+    right: auto;
+    width: 80%;
+    max-width: 500px;
+    
+    filter: opacity(0.1);
+}
+.outline-logo-bg.right {
+    right: 50px;
+    left:auto;
+
+}
+
+@media (max-width: 768px) {
+    .outline-logo-bg {
+        display: none;
+    }
+}
 
 form.card {
     padding: 25px;
-    background: #e8e8e8;
+    background: var(--clr-LightGray);
     border-radius: 8px;
     border: 1px solid #cecece;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -287,7 +312,7 @@ form.card {
 }
 
 .navbar-custom .navbar-toggle .icon-bar {
-    background-color: #f8f6f0;
+    background-color: var(--clr-offWhite);
 }
 
 
@@ -457,6 +482,11 @@ form.card {
     font-weight: bold;
 }
 
+.footer p {
+    line-height: 2.5rem;
+}
+
+
 .footer ul {
     list-style: none;
     padding: 0;
@@ -480,6 +510,10 @@ form.card {
     display: flex;
     align-content: flex-start;
     gap: 10px;
+}
+
+.footer .contactUs i{
+    margin-left: 5px;
 }
 
 .footer .social-icons a {
@@ -540,7 +574,7 @@ footer .footer-bottom a {
 .nav-tabs>li.active>a:focus,
 .nav-tabs>li.active>a:hover {
     color: var(--clr-blackGreen);
-    background-color: #e8e8e8;
+    background-color: var(--clr-LightGray);
 }
 
 .tab-content .form-group label {
@@ -563,7 +597,7 @@ footer .footer-bottom a {
     border: 1px solid #dddddd;
     border-top: none;
     border-radius: 0 0 6px 6px;
-    background-color: #e8e8e8;
+    background-color: var(--clr-LightGray);
 }
 
 .btn-primary {
