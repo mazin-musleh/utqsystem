@@ -399,6 +399,7 @@ body.modal-open { overflow: hidden; }
         url('../fonts/29ltbukraregular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -407,6 +408,7 @@ body.modal-open { overflow: hidden; }
         url('../fonts/29ltbukrabold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -415,6 +417,7 @@ body.modal-open { overflow: hidden; }
         url('../fonts/29ltbukralight.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -484,6 +487,11 @@ html:lang(ar) body {
 .hero-content p {
     margin: 0;
     padding: 0;
+}
+
+.hero-content img {
+    max-width: 100%;
+    height: auto;
 }
 
 .hero-content p,
@@ -576,6 +584,7 @@ form.card {
 
     img {
         width: 100%;
+        height: auto;
     }
 
     a.cover-link {
@@ -681,10 +690,6 @@ form.card {
 
 .navbar-custom .navbar-nav>li>.dropdown-menu {
     margin-top: 0;
-}
-
-.navbar-custom .navbar-toggle {
-    margin-top: 14px;
 }
 
 .navbar-custom .navbar-toggle .icon-bar {
@@ -832,6 +837,7 @@ form.card {
 .ad-banner img{
     border-radius: 8px;
     width: 100%;
+    height: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 800px;
 }
@@ -852,7 +858,7 @@ form.card {
     margin-bottom: 20px;
 }
 
-.footer h4 {
+.footer h3 {
     font-size: 16px;
     margin-bottom: 20px;
     font-weight: bold;

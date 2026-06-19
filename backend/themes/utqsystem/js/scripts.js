@@ -135,14 +135,21 @@ document.addEventListener('DOMContentLoaded', function () {
         var btn = document.getElementById('sound-toggle');
         if (!btn) return;
 
+        function syncButton() {
+            // icon is decorative (aria-hidden); the button's accessible name
+            // comes from aria-label and reflects the action the user can take.
+            btn.innerHTML = video.muted
+                ? '<i class="fa fa-volume-off" aria-hidden="true"></i>'
+                : '<i class="fa fa-volume-up" aria-hidden="true"></i>';
+            btn.setAttribute('aria-label', video.muted ? 'تشغيل صوت الفيديو' : 'كتم صوت الفيديو');
+        }
+
         video.muted = true; // start muted (required for autoplay)
-        btn.innerHTML = '<i class="fa fa-volume-off"></i>';
+        syncButton();
 
         btn.addEventListener('click', function () {
             video.muted = !video.muted;
-            btn.innerHTML = video.muted
-                ? '<i class="fa fa-volume-off"></i>'
-                : '<i class="fa fa-volume-up"></i>';
+            syncButton();
         });
     })();
 
