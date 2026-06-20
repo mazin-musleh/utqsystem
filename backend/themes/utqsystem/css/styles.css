@@ -585,6 +585,9 @@ form.card {
     img {
         width: 100%;
         height: auto;
+        /* fade top & bottom edges to true transparency (page bg shows through) */
+        -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 20%, #000 80%, transparent 100%);
+        mask-image: linear-gradient(180deg, transparent 0%, #000 20%, #000 80%, transparent 100%);
     }
 
     a.cover-link {
@@ -597,16 +600,6 @@ form.card {
 }
 
 
-.cover-section::before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    background: rgb(247, 245, 240);
-    background: linear-gradient(180deg, rgba(247, 245, 240, 1) 0%, rgba(247, 245, 240, 0) 20%, rgba(247, 245, 240, 0) 80%, rgba(247, 245, 240, 1) 100%);
-}
 
 
 /* Navbar custom styles */
@@ -623,6 +616,19 @@ form.card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease-in-out;
     will-change: background-color;
+}
+
+/* Black gradient shown only over the hero — fades to transparent at the bottom edge.
+   On a pseudo-element so it can cross-fade via opacity (composited, gradients can't transition). */
+.navbar-custom::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+    z-index: -1;
 }
 
 .navbar-custom .navbar-brand,
@@ -718,22 +724,30 @@ form.card {
 }
 
 
-/* Set initial transparent background for the navbar on big screen */
-@media (min-width: 768px) {
-    body {
-        padding-top: 0;
-    }
+/* Navbar: transparent with a black gradient over the hero (all screen sizes) */
+body {
+    padding-top: 0;
+}
 
-    .navbar-custom.navbar.overHero {
-        box-shadow: none;
-        transition: background-color 0.3s ease-in-out;
-        min-height: 60px;
-        background: rgba(255, 255, 255, 0.1);
-        border: none;
-        backdrop-filter: blur(8px);
-        /* For Safari */
-    }
+.navbar-custom.navbar.overHero {
+    box-shadow: none;
+    transition: background-color 0.3s ease-in-out;
+    min-height: 60px;
+    background-color: transparent;
+    border: none;
+}
 
+.navbar-custom.navbar.overHero::before {
+    opacity: 1;
+}
+
+/* When the mobile menu is open over the hero, use a solid dark backdrop
+   instead of the fading gradient so the expanded links stay readable. */
+.navbar-custom.navbar.overHero:has(.navbar-collapse.is-open) {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.navbar-custom.navbar.overHero:has(.navbar-collapse.is-open)::before {
+    opacity: 0;
 }
 
 

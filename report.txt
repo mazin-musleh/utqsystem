@@ -1,0 +1,74 @@
+================================================================
+  AI-ASSISTED LEGACY WEB PAGE MODERNIZATION — BRIEF REPORT
+  Project: utqsystem (Quran association registration landing page)
+  Date: 2026-06-20
+================================================================
+
+GOAL
+----
+Experiment: take a legacy, dependency-heavy static page and modernize
+it end-to-end using an AI coding agent — removing old libraries,
+optimizing performance, and fixing accessibility/SEO — while verifying
+every change empirically.
+
+
+WHAT WAS DONE
+-------------
+1. De-legacy: removed jQuery, jQuery UI, Bootstrap 3, and Select2.
+   Reimplemented the grid, navbar, modals, tabs, forms, and buttons in
+   plain CSS + ~300 lines of vanilla JS. Native <select> replaced Select2.
+2. Self-hosting: vendored Font Awesome locally; dropped all CDN runtime
+   dependencies (page now works fully offline).
+3. Media: cropped + recompressed both videos; converted images to WebP;
+   added explicit width/height; lazy-loaded below-the-fold media; turned
+   the Google Map into a click-to-load facade (no third-party code on load).
+4. Performance: single render-blocking stylesheet, deferred JS, LCP poster
+   preload (fetchpriority=high), font-display:swap, rAF-throttled scroll
+   handler, and a reflow-free counter animation.
+5. Accessibility: accessible names for icon buttons/links, label/for fixes,
+   correct heading order, dir=rtl, visible h1.
+6. SEO: meta description, canonical, Open Graph, Twitter Card, and JSON-LD
+   organization data.
+
+
+MEASURED BENEFITS
+-----------------
+- Initial page payload: ~16.5 MB  ->  ~7 MB  (about 57% lighter); the 3.4 MB
+  content video now loads only when the user presses play.
+- Hero video:    8.0 MB -> 5.2 MB   (letterbox + watermark cropped, re-encoded)
+- Content video: 7.0 MB -> 3.4 MB   (720p, loads on demand)
+- Images:        ~675 KB -> ~205 KB (WebP: ad -64%, poster -39%, cover -85%)
+- Removed ~520 KB of legacy JS/CSS libraries, replaced by a few KB of
+  hand-written, dependency-free code.
+- Render-blocking requests reduced to a single stylesheet.
+- Multiple Lighthouse accessibility, SEO, and CLS/LCP audits cleared.
+
+
+VALUE OF THE AI-ASSISTED APPROACH
+---------------------------------
+- Speed: a multi-day manual modernization was completed in a single
+  working session, change by change.
+- Empirical, not guesswork: the agent drove a headless browser to MEASURE
+  results — A/B computed-style comparisons, per-resource byte counts,
+  accessibility-tree checks, and visual screenshots — so each fix was
+  verified instead of assumed.
+- Caught subtle, easy-to-miss issues, e.g.:
+    * a 1.6x font-size regression traced to a missing html{font-size:10px};
+    * a non-composited box-shadow animation hurting scroll FPS;
+    * layout thrashing in the scroll handler and counter animation;
+    * the 6 "label for" warnings actually originating inside Google's
+      embedded map iframe (third-party), not our code.
+- Low risk: incremental commits, originals recoverable from git history,
+  and visual/numeric verification before each replacement.
+- Current best practices applied by default (WebP, fetchpriority, facade
+  loading, ARIA naming, structured data) without separate research time.
+
+
+LIMITATIONS / NOTES
+-------------------
+- The forms remain a non-functional demo (no backend) by design.
+- WebP og:image assumes modern social crawlers (true in 2026); a JPG
+  fallback can be added if any platform misbehaves.
+- Visual/UX judgement still benefited from human review of screenshots.
+
+================================================================

@@ -311,12 +311,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         var observer = new IntersectionObserver(function (entries, obs) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    animate();
-                    obs.disconnect();
-                }
-            });
+            // The counters share a row, so several entries can arrive in one
+            // batch — disconnect and run the animation exactly once.
+            if (entries.some(function (e) { return e.isIntersecting; })) {
+                obs.disconnect();
+                animate();
+            }
         }, { threshold: 0.5 });
 
         counters.forEach(function (c) { observer.observe(c); });
