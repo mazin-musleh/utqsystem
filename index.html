@@ -20,7 +20,8 @@
         content="سجّل الطلاب والطالبات في مجمعات ودور وروضات تحفيظ القرآن بعنيزة بمناهج معتمدة وكوادر متخصصة.">
     <meta property="og:url" content="https://www.utqs.org.sa/">
     <meta property="og:locale" content="ar_AR">
-    <meta property="og:image" content="https://www.utqs.org.sa/backend/themes/utqsystem/img/quran-poster.jpg">
+    <meta property="og:image" content="https://www.utqs.org.sa/backend/themes/utqsystem/img/quran-poster.webp">
+    <meta property="og:image:type" content="image/webp">
     <meta property="og:image:width" content="1280">
     <meta property="og:image:height" content="608">
     <meta property="og:image:alt" content="جمعية تحفيظ القرآن الكريم بعنيزة">
@@ -31,11 +32,13 @@
     <meta name="twitter:title" content="جمعية تحفيظ القرآن الكريم بعنيزة | التسجيل وتحفيظ القرآن">
     <meta name="twitter:description"
         content="سجّل الطلاب والطالبات في مجمعات ودور وروضات تحفيظ القرآن بعنيزة بمناهج معتمدة وكوادر متخصصة.">
-    <meta name="twitter:image" content="https://www.utqs.org.sa/backend/themes/utqsystem/img/quran-poster.jpg">
+    <meta name="twitter:image" content="https://www.utqs.org.sa/backend/themes/utqsystem/img/quran-poster.webp">
     <!-- Favicons -->
     <link rel="icon" href="./favicon.ico" sizes="any">
     <link rel="icon" type="image/svg+xml" href="./favicon.svg">
     <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+    <!-- Preload hero poster (LCP) so it's discovered early and fetched first -->
+    <link rel="preload" as="image" href="./backend/themes/utqsystem/img/quran-poster.webp" fetchpriority="high">
     <!-- Custom CSS (includes the vanilla Bootstrap-replacement base) -->
     <link rel="stylesheet" href="./backend/themes/utqsystem/css/styles.css">
     <!-- Font Awesome 4.7.0 CSS (local) — non-render-blocking (icons aren't layout-critical) -->
@@ -53,7 +56,7 @@
       "name": "الجمعية الخيرية لتحفيظ القرآن الكريم بعنيزة",
       "url": "https://www.utqs.org.sa/",
       "logo": "https://www.utqs.org.sa/apple-touch-icon.png",
-      "image": "https://www.utqs.org.sa/backend/themes/utqsystem/img/quran-poster.jpg",
+      "image": "https://www.utqs.org.sa/backend/themes/utqsystem/img/quran-poster.webp",
       "email": "info@utq.org.sa",
       "telephone": "+966500054100",
       "address": {
@@ -106,7 +109,7 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <video id="hero-video" class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true"
-            tabindex="-1" poster="./backend/themes/utqsystem/img/quran-poster.jpg" disablepictureinpicture
+            tabindex="-1" poster="./backend/themes/utqsystem/img/quran-poster.webp" disablepictureinpicture
             disableremoteplayback>
             <source src="./backend/themes/utqsystem/img/quran.webm" type="video/webm">
             <source src="./backend/themes/utqsystem/img/quran.mp4" type="video/mp4">

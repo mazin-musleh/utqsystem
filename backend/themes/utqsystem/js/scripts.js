@@ -8,19 +8,32 @@ document.addEventListener('DOMContentLoaded', function () {
     (function navOverHero() {
         var navbar = document.querySelector('.navbar');
         var hero = document.querySelector('.hero-section');
-        if (!navbar) return;
+        if (!navbar || !hero) return;
 
-        function update() {
-            var scroll = window.pageYOffset + 200;
-            if (hero && scroll <= hero.offsetHeight) {
-                navbar.classList.add('overHero');
-            } else {
-                navbar.classList.remove('overHero');
+        var threshold = 0;   // cached: scrollY at which the navbar turns solid
+        var over = null;     // current state (null forces the first apply)
+        var ticking = false;
+
+        function measure() { threshold = hero.offsetHeight - 200; }
+
+        function apply() {
+            ticking = false;
+            // read scroll position only (no layout-forcing DOM reads here)
+            var shouldBeOver = window.pageYOffset <= threshold;
+            if (shouldBeOver !== over) {           // touch the DOM only on change
+                over = shouldBeOver;
+                navbar.classList.toggle('overHero', over);
             }
         }
 
-        update();
-        window.addEventListener('scroll', update, { passive: true });
+        function onScroll() {                       // throttle to one run per frame
+            if (!ticking) { ticking = true; requestAnimationFrame(apply); }
+        }
+
+        measure();
+        apply();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', function () { measure(); apply(); }, { passive: true });
     })();
 
     /* ---------- Navbar toggle (mobile menu) ---------- */
@@ -231,11 +244,13 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!gender || !list) return;
 
         gender.addEventListener('change', function () {
-            list.innerHTML = '';
-            list.appendChild(new Option('اختر فرع', ''));
+            var frag = document.createDocumentFragment();
+            frag.appendChild(new Option('اختر فرع', ''));
             (branches[gender.value] || []).forEach(function (b) {
-                list.appendChild(new Option(b.text, b.id));
+                frag.appendChild(new Option(b.text, b.id));
             });
+            list.innerHTML = '';
+            list.appendChild(frag); // single insertion instead of N reflows
         });
     })();
 
@@ -263,35 +278,43 @@ document.addEventListener('DOMContentLoaded', function () {
     /* ---------- Statistics counters (animate when in view) ---------- */
     (function counters() {
         var counters = document.querySelectorAll('.counter');
-        if (!counters.length || !('IntersectionObserver' in window)) {
-            // Fallback: show final values immediately
-            counters.forEach(function (c) { c.innerText = c.getAttribute('data-target'); });
-            return;
-        }
-
-        var speed = 200;
+        if (!counters.length) return;
 
         function format(n) {
             return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
         }
 
-        function run(counter) {
-            var target = +counter.getAttribute('data-target');
-            var count = +counter.innerText.replace(/,/g, '');
-            var increment = target / speed;
-            if (count < target) {
-                counter.innerText = format(Math.ceil(count + increment));
-                setTimeout(function () { run(counter); }, 20);
-            } else {
-                counter.innerText = format(target);
-            }
+        // No IntersectionObserver -> just show the final values.
+        if (!('IntersectionObserver' in window)) {
+            counters.forEach(function (c) { c.textContent = format(+c.getAttribute('data-target') || 0); });
+            return;
         }
 
-        var observer = new IntersectionObserver(function (entries) {
+        var DURATION = 2000; // ms
+
+        // One rAF loop drives all counters; textContent avoids layout-forcing
+        // reads/writes, and values come from elapsed time (no DOM read-back).
+        function animate() {
+            var targets = [];
+            counters.forEach(function (c) { targets.push(+c.getAttribute('data-target') || 0); });
+            var start;
+            function frame(now) {
+                if (start === undefined) start = now;
+                var p = Math.min((now - start) / DURATION, 1);
+                var eased = 1 - (1 - p) * (1 - p); // easeOutQuad
+                counters.forEach(function (c, i) {
+                    c.textContent = format(Math.round(targets[i] * eased));
+                });
+                if (p < 1) requestAnimationFrame(frame);
+            }
+            requestAnimationFrame(frame);
+        }
+
+        var observer = new IntersectionObserver(function (entries, obs) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
-                    counters.forEach(run);
-                    observer.disconnect();
+                    animate();
+                    obs.disconnect();
                 }
             });
         }, { threshold: 0.5 });

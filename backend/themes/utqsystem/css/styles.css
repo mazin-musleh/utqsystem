@@ -621,7 +621,8 @@ form.card {
     left: 0;
     z-index: 1030;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+    will-change: background-color;
 }
 
 .navbar-custom .navbar-brand,
@@ -729,10 +730,8 @@ form.card {
         min-height: 60px;
         background: rgba(255, 255, 255, 0.1);
         border: none;
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(8px);
         /* For Safari */
-        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     }
 
 }
